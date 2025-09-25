@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en" class="has-background-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh N Sharma | Backend Software Engineer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Ganesh N Sharma, an experienced Backend Software Engineer with 7 years of expertise in Python, Django, Flask, FastAPI, Docker, Kubernetes, and cloud technologies.">
+    <meta name="author" content="Ganesh N Sharma">
+    <meta name="keywords" content="Ganesh N Sharma, Software Engineer, Backend Developer, Python, Django, FastAPI, FinTech, Portfolio">
+    <link rel="canonical" href="https://ganeshnsharma.dev"> <!-- Replace with your actual domain -->
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ganeshnsharma.dev"> <!-- Replace with your actual domain -->
+    <meta property="og:title" content="Ganesh N Sharma | Backend Software Engineer">
+    <meta property="og:description" content="Experienced Backend Software Engineer specializing in building robust, scalable solutions.">
+    <meta property="og:image" content="https://placehold.co/1200x630/2c3e50/ecf0f1?text=GS">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ganeshnsharma.dev"> <!-- Replace with your actual domain -->
+    <meta property="twitter:title" content="Ganesh N Sharma | Backend Software Engineer">
+    <meta property="twitter:description" content="Experienced Backend Software Engineer specializing in building robust, scalable solutions.">
+    <meta property="twitter:image" content="https://placehold.co/1200x630/2c3e50/ecf0f1?text=GS">
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css"/>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Basic Accessibility: Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #2c3e50;
+            color: white;
+            padding: 8px;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 10px;
+        }
+
+        /* Keyboard Focus Styles */
+        :focus-visible {
+            outline: 3px solid #3273dc;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        /* Classy Theme */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        .hero.is-primary {
+            background-color: var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .hero-body {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title, .subtitle {
+            color: var(--text-color);
+        }
+        .hero .title {
+             color: #fff;
+        }
+         .hero .subtitle {
+             color: #bdc3c7;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .icon {
+            color: var(--secondary-color);
+        }
+        .box {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            height: 100%; /* Make boxes in columns same height */
+        }
+        .navbar.is-fixed-top {
+             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-item:hover, .navbar-item.is-active {
+            background-color: #f5f5f5 !important;
+            color: var(--secondary-color) !important;
+            font-weight: 600;
+        }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 32px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 32px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after {
+            left: -12.5px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .timeline-content .tag {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .company-logo {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        /* Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 18.5px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+        
+        /* New Contact Section Styles */
+        .contact-box {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .contact-item .icon {
+            color: var(--primary-color);
+        }
+        .contact-details .heading {
+            margin-bottom: 0.25rem;
+        }
+        .contact-details a {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        /* Shepherd tour styles */
+        .shepherd-button {
+            background: var(--secondary-color);
+            border: none;
+            color: white;
+        }
+        .shepherd-button:not(:disabled):hover {
+            background: var(--primary-color);
+        }
+        .shepherd-header {
+            background: var(--primary-color);
+        }
+        .shepherd-title {
+            color: white;
+        }
+
+    </style>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ganesh N Sharma",
+      "jobTitle": "Backend Software Engineer",
+      "telephone": "+919164267500",
+      "email": "ganeshnsharma47@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bengaluru",
+        "addressCountry": "IN"
+      },
+      "url": "https://ganeshnsharma.dev",
+      "sameAs": [
+        "https://github.com/gsharma68",
+        "https://www.linkedin.com/in/ganesh-n-sharma"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Georgia Institute of Technology",
+          "degree": "Master of Science in Computer Science",
+          "startDate": "2022-08"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "University Visvesvaraya College of Engineering (UVCE)",
+          "degree": "Bachelor of Engineering (ISE)",
+          "startDate": "2015-06",
+          "endDate": "2019-06"
+        }
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "description": "Experienced Software Engineer with a proven 7 year track record in architecture design and development of applications, data and infrastructure. Proficient in Python (Django, Flask and FastAPI) and FinTech.",
+        "skills": "Python, Java, JavaScript, SQL, HTML, Docker, Kubernetes, AWS, GCP, Jenkins, Git, Django, Flask, FastAPI, Pandas, Numpy, Redis, Spring"
+      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Tide",
+          "jobTitle": "Backend Engineer 4 - PCS",
+          "startDate": "2024-08"
+        },
+        {
+          "@type": "Organization",
+          "name": "JP Morgan Chase & Co",
+          "jobTitle": "Software Development Engineer 3 - AWM",
+          "startDate": "2023-10",
+          "endDate": "2024-08"
+        },
+        {
+          "@type": "Organization",
+          "name": "Societe Generale",
+          "jobTitle": "Specialist Software Engineer",
+          "startDate": "2021-07",
+          "endDate": "2023-09"
+        },
+        {
+          "@type": "Organization",
+          "name": "Rakuten",
+          "jobTitle": "Software Engineer",
+          "startDate": "2021-01",
+          "endDate": "2021-07"
+        },
+        {
+            "@type": "Organization",
+            "name": "Rakuten",
+            "jobTitle": "Associate Software Engineer",
+            "startDate": "2019-07",
+            "endDate": "2021-01"
+        },
+        {
+            "@type": "Organization",
+            "name": "Rakuten",
+            "jobTitle": "Software Development Intern",
+            "startDate": "2019-01",
+            "endDate": "2019-07"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar is-fixed-top has-background-white" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <strong class="is-size-4 has-text-weight-bold" style="color: var(--primary-color);">G.N.S</strong>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#about" class="navbar-item">About</a>
+                    <a href="#experience" class="navbar-item">Experience</a>
+                    <a href="#skills" class="navbar-item">Skills</a>
+                    <a href="#projects" class="navbar-item">Projects</a>
+                    <a href="#education" class="navbar-item">Education</a>
+                    <a href="#contact" class="navbar-item">Contact</a>
+                    <div class="navbar-item">
+                        <button id="tour-button" class="button is-primary is-outlined">
+                            <span class="icon"><i class="fas fa-route"></i></span>
+                            <span>Start Tour</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero is-primary is-fullheight-with-navbar" id="hero-section">
+        <div id="hero-canvas"></div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 has-text-weight-bold">
+                    Ganesh N Sharma
+                </h1>
+                <h2 class="subtitle is-3">
+                    Backend Software Engineer
+                </h2>
+                <div class="buttons is-centered are-medium">
+                    <a href="https://github.com/gsharma68" target="_blank" class="button is-light is-outlined" aria-label="GitHub Profile">
+                        <span class="icon"><i class="fab fa-github"></i></span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ganesh-n-sharma" target="_blank" class="button is-light is-outlined" aria-label="LinkedIn Profile">
+                        <span class="icon"><i class="fab fa-linkedin"></i></span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#contact" class="button is-light is-outlined" aria-label="Contact Information">
+                        <span class="icon"><i class="fas fa-envelope"></i></span>
+                        <span>Contact Me</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Start -->
+    <main id="main-content">
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="has-text-centered">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="box content is-medium">
+                            <p>
+                                Experienced Software Engineer with a proven 7-year track record in architecture design and development of applications, data, and infrastructure. Proficient in Python (Django, Flask, and FastAPI) and FinTech, with a passion for building robust end-to-end solutions. Skilled in Docker, Kubernetes, Jenkins, Cloud Technologies, and Agile Methodologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="has-text-centered">
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <div class="timeline">
+                    <!-- Tide -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <p class="is-size-7 has-text-grey">Aug 2024 - Present</p>
+                            <h3 class="title is-4"><span class="icon company-logo"><i class="fas fa-water"></i></span>Tide</h3>
+                            <p class="subtitle is-6">Backend Engineer 4 - PCS</p>
+                            <div class="content is-small">
+                                <ul>
+                                    <li>Developed and enhanced credit lending microservices (Flask, FastAPI, Django) by introducing new improvements to lead processing while ensuring idempotency, concurrency, and security standards.</li>
+                                    <li>Own reliability initiatives, optimizing system performance, modifying services, and contributing to architecture design, code reviews, and a scalable reliability framework.</li>
+                                    <li>Led backend migration and integration of the Partner Credit Services Advisor Portal with Tide's user system, driving decisions on OAuth, JWT, role management, attribution handling, and threat modeling.</li>
+                                    <li>Designed and implemented complex data synchronization between backend systems and Salesforce, establishing background tasks and cron jobs to maintain BAU data correctness.</li>
+                                    <li>Integrated backend services with Tide's internal communication system, 6sense, and other third-party platforms using asynchronous and event-driven communication (SQS, SNS, Celery).</li>
+                                    <li>Authored RFCs for KYX upgrades and OTP authentication, contributing to system-wide security enhancements.</li>
+                                    <li>Implemented improved logging and monitoring mechanisms across services for better observability and debugging.</li>
+                                    <li>Currently owning backend efforts for the Tide PCS conversion funnel, optimizing the full user journey from intent to credit acquisition.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag is-info">Python</span><span class="tag is-info">Django</span><span class="tag is-info">FastAPI</span><span class="tag is-info">Flask</span><span class="tag is-info">AWS</span><span class="tag is-info">SQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- JP Morgan -->
+                     <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <p class="is-size-7 has-text-grey">Oct 2023 - Aug 2024</p>
+                            <h3 class="title is-4"><span class="icon company-logo"><i class="fas fa-landmark"></i></span>JP Morgan Chase & Co</h3>
+                            <p class="subtitle is-6">Software Development Engineer 3 - AWM</p>
+                            <div class="content is-small">
+                                <ul>
+                                    <li>Built and optimized APIs using FastAPI and Flask, improving data processing and ensuring reliability.</li>
+                                    <li>Led the implementation of a unified authentication and authorization framework, strengthening security and standardizing access control.</li>
+                                    <li>Refactored the backend to support fund-of-funds reporting, aligning with 12-Factor App principles.</li>
+                                    <li>Developed data pipelines with quantitative teams for fund reports aligned to philanthropic preferences. Fine-tuned LLMs to automate commentary.</li>
+                                    <li>Worked extensively on real-time financial data infrastructure and reporting for complex investment structures.</li>
+                                </ul>
+                                 <div class="tags">
+                                    <span class="tag is-primary">Python</span><span class="tag is-primary">FastAPI</span><span class="tag is-primary">Django</span><span class="tag is-primary">AWS</span><span class="tag is-primary">Pandas</span><span class="tag is-primary">Numpy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Societe Generale -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <p class="is-size-7 has-text-grey">Jul 2021 - Sep 2023</p>
+                            <h3 class="title is-4"><span class="icon company-logo"><i class="fas fa-university"></i></span>Societe Generale</h3>
+                            <p class="subtitle is-6">Specialist Software Engineer</p>
+                            <div class="content is-small">
+                                <ul>
+                                    <li>Contributed to the development of multi-threaded, highly available, and resilient platforms for ITSM data management using Angular, Python Flask, PostgreSQL, and private cloud (AWS).</li>
+                                    <li>Led development efforts of mission-critical ETLs and the Go2Cloud initiative for cloud migration to AWS.</li>
+                                    <li>Developed a highly modular framework that accelerates the building of ETL pipelines by 60% with monitoring using Elastic Search and Kibana.</li>
+                                    <li>Recipient of the Star of the quarter award (SOQ) for rapid, single-handed development of a highly scalable security scan data browsing application.</li>
+                                    <li>Actively participated in code reviews, mentored multiple teammates, and made cross-team contributions.</li>
+                                    <li>Certified 'Data Steward - Data Citizen programme'. Winner of GTS Innovation award 2023 for ideating phishing evasion solution.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag is-danger">Python</span><span class="tag is-danger">Django</span><span class="tag is-danger">Flask</span><span class="tag is-danger">Angular</span><span class="tag is-danger">SQL</span><span class="tag is-danger">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Rakuten -->
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                             <p class="is-size-7 has-text-grey">Jul 2019 - Jul 2021</p>
+                            <h3 class="title is-4"><span class="icon company-logo"><i class="fas fa-shopping-cart"></i></span>Rakuten</h3>
+                            <p class="subtitle is-6">Software Engineer / Associate</p>
+                            <div class="content is-small">
+                                <ul>
+                                    <li>Worked as a key project resource for a highly scalable and resilient platform, responsible for crawling over 100+ TB of data per day.</li>
+                                    <li>Hands-on experience with Concurrent Programming, Lambdas, and Streams, utilizing concepts like Phasers, Circuit breakers, and Rate limiters.</li>
+                                    <li>Developed a structured logging library using Apache Log4J2, featuring class-level flexibility and JSON logging.</li>
+                                    <li>Served as a key resource for the end-to-end development and integration of a captcha solver service (Java + Spring) into the crawler platform.</li>
+                                    <li>Developed a POC using Beautiful Soup 4 and Puppeteer to crawl data, resulting in a SPOT award.</li>
+                                    <li>Contributed as a core developer of a deep learning (CNN + bi LSTM) based image and text classification module, submitted for patent registration.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag is-warning">Python</span><span class="tag is-warning">Java</span><span class="tag is-warning">Spring</span><span class="tag is-warning">Django</span><span class="tag is-warning">Redis</span><span class="tag is-warning">GCP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Rakuten Intern -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <p class="is-size-7 has-text-grey">Jan 2019 - Jul 2019</p>
+                            <h3 class="title is-4"><span class="icon company-logo"><i class="fas fa-shopping-bag"></i></span>Rakuten</h3>
+                            <p class="subtitle is-6">Software Development Intern</p>
+                            <div class="content is-small">
+                                <ul>
+                                    <li>Developed an attribute extraction platform using Python, Django, Tensorflow, Keras, and Fast-text/Word2Vec.</li>
+                                    <li>Contributed to end-to-end development of a progress tracker tool, utilizing Django, HTML, CSS, JS, and Bootstrap 4.</li>
+                                    <li>Developed deep learning models for NER (Named Entity Recognition) and POS (Part-of-Speech) tagging.</li>
+                                </ul>
+                                <div class="tags">
+                                    <span class="tag">Python</span><span class="tag">Django</span><span class="tag">NLTK</span><span class="tag">GCP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section has-background-white" id="skills">
+            <div class="container">
+                 <div class="has-text-centered">
+                    <h2 class="section-title">Skills</h2>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-10">
+                        <div class="box">
+                             <div class="content">
+                                <!-- Languages -->
+                                <h4 class="title is-5"><span class="icon"><i class="fas fa-code"></i></span> Languages</h4>
+                                <div class="tags are-medium">
+                                    <span class="tag is-light"><i class="fab fa-python mr-2"></i>Python</span>
+                                    <span class="tag is-light"><i class="fab fa-java mr-2"></i>Java</span>
+                                    <span class="tag is-light"><i class="fab fa-js-square mr-2"></i>JavaScript</span>
+                                    <span class="tag is-light"><i class="fas fa-database mr-2"></i>SQL</span>
+                                    <span class="tag is-light"><i class="fab fa-html5 mr-2"></i>HTML</span>
+                                </div>
+                                <hr>
+                                <!-- Technologies -->
+                                <h4 class="title is-5"><span class="icon"><i class="fas fa-cogs"></i></span> Technologies & Tools</h4>
+                                <div class="tags are-medium">
+                                    <span class="tag is-light"><i class="fab fa-docker mr-2"></i>Docker</span>
+                                    <span class="tag is-light"><i class="fas fa-dharmachakra mr-2"></i>Kubernetes</span>
+                                    <span class="tag is-light"><i class="fab fa-aws mr-2"></i>AWS</span>
+                                    <span class="tag is-light"><i class="fab fa-google mr-2"></i>GCP</span>
+                                    <span class="tag is-light"><i class="fab fa-jenkins mr-2"></i>Jenkins</span>
+                                    <span class="tag is-light"><i class="fab fa-git-alt mr-2"></i>Git</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects & Publications Section -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="has-text-centered">
+                    <h2 class="section-title">Projects & Publications</h2>
+                </div>
+                
+                <h3 class="title is-4 has-text-centered mb-5">Major Projects</h3>
+                <div class="columns is-multiline is-centered">
+                    <!-- Project C-19 Beds -->
+                    <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-5">C-19 Beds</h3>
+                            <p class="subtitle is-7">Python, Django, GeoPy, Heroku | May 2020</p>
+                            <p class="content is-small">
+                                Android application + Python-Django backend to provide realtime updates about COVID beds available in care centers/hospitals. Recognized by a local media house for social impact.
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Project Police Beat -->
+                    <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-5">Police Beat Management System</h3>
+                             <p class="subtitle is-7">Python, Django, NLP, Computer Vision | Nov 2019</p>
+                            <p class="content is-small">
+                                AI based beat monitoring system with face recognition, speech-to-text, emotion detection, scene description, SOS and check point validation, plus a centralized monitoring system with real-time GPS tracking.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Project Netram -->
+                    <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-5">Netram - Object Detection in Video</h3>
+                            <p class="subtitle is-7">Python, Django, YOLO/Detectron2 | Jan 2019</p>
+                            <p class="content is-small">
+                                Part of an intruder detection system, capable of detecting animals, humans and other objects. Trained over COCO dataset, with specific data entries tweaked to obtain accuracies of 88%.
+                            </p>
+                        </div>
+                    </div>
+                     <!-- Project Wannacook -->
+                    <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-5">Wannacook</h3>
+                            <p class="subtitle is-7">HTML5, Bootstrap 4, CSS3, JavaScript</p>
+                            <p class="content is-small">
+                                A smart, highly responsive, and extensible solution to find the best recipe using available ingredients. Data fetched from flat files.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="title is-4 has-text-centered mt-6 mb-5">Publications</h3>
+                 <div class="columns is-multiline is-centered">
+                    <!-- Pub Dragonfly -->
+                    <div class="column is-10">
+                        <div class="box">
+                            <h3 class="title is-5">Dragonfly-Net: Dragonfly classification using CNN</h3>
+                            <p class="subtitle is-7">JAIS (ISSN: 2321-6115) | June 2021</p>
+                            <p class="content is-small">
+                                Proposed a novel approach, Dragonfly-Net, for classifying dragonfly and damselfly species from images without pre-processing, for applications in ecology and biology.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Pub Offline Kannada -->
+                    <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-5">Offline Kannada Handwritten Character Recognition Using CNN</h3>
+                            <p class="subtitle is-7">IEEE International WIE Con | Nov 2019</p>
+                            <p class="content is-small">
+                               This work devises to bridge the gap between state-of-the-art deep learning technology to automate handwritten character recognition using CNNs.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Pub Capsule Network -->
+                    <div class="column is-5">
+                        <div class="box">
+                             <h3 class="title is-5">Recognition of Off-line Kannada Handwritten Characters by DL using Capsule Network</h3>
+                            <p class="subtitle is-7">IJEAT | Aug 2019</p>
+                            <p class="content is-small">
+                                We budge towards solving the problem statement with Capsule Networks, the state-of-the-art in Computer Vision, to overcome the drawbacks of CNNs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section class="section has-background-white" id="education">
+            <div class="container">
+                 <div class="has-text-centered">
+                    <h2 class="section-title">Education</h2>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-5">
+                        <div class="box">
+                             <h3 class="title is-4"><span class="icon"><i class="fas fa-graduation-cap"></i></span> Georgia Institute of Technology</h3>
+                             <p class="subtitle is-6">Online Master of Science in Computer Science</p>
+                             <p class="is-size-7 has-text-grey">Aug 2022 - Present</p>
+                             <p>Focus on Software Architecture, Computer Networks, and Database Systems.</p>
+                        </div>
+                    </div>
+                     <div class="column is-5">
+                        <div class="box">
+                            <h3 class="title is-4"><span class="icon"><i class="fas fa-university"></i></span> University Visvesvaraya College of Engineering</h3>
+                             <p class="subtitle is-6">Bachelor of Engineering (ISE)</p>
+                             <p class="is-size-7 has-text-grey">Jun 2015 - Jun 2019</p>
+                            <p>Focus on Distributed Systems, Data Structures & Algorithms, AI & ML.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="has-text-centered">
+                    <h2 class="section-title">Get In Touch</h2>
+                     <p class="subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="box contact-box">
+                            <!-- Email -->
+                            <div class="contact-item">
+                                <span class="icon is-large"><i class="fas fa-envelope fa-2x"></i></span>
+                                <div class="contact-details">
+                                    <p class="heading">Email</p>
+                                    <p class="title is-5"><a href="mailto:ganeshnsharma47@gmail.com">ganeshnsharma47@gmail.com</a></p>
+                                </div>
+                            </div>
+                             <!-- Phone -->
+                            <div class="contact-item">
+                                <span class="icon is-large"><i class="fas fa-phone fa-2x"></i></span>
+                                <div class="contact-details">
+                                    <p class="heading">Phone</p>
+                                    <p class="title is-5"><a href="tel:+919164267500">+91 91642 67500</a></p>
+                                </div>
+                            </div>
+                            <!-- Location -->
+                             <div class="contact-item">
+                                <span class="icon is-large"><i class="fas fa-map-marker-alt fa-2x"></i></span>
+                                <div class="contact-details">
+                                    <p class="heading">Location</p>
+                                    <p class="title is-5 has-text-dark">Bengaluru, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer has-background-grey-darker has-text-white">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Ganesh N Sharma Portfolio</strong>. Coded with <span class="icon" style="color:#e74c3c;"><i class="fas fa-heart"></i></span>.
+            </p>
+            <p>&copy; 2024 Ganesh N Sharma. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Navbar burger toggle ---
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
+            });
+        }
+        
+        // --- Navbar scroll highlight ---
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navbar-end a.navbar-item');
+        
+        const activateNavLink = () => {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 60) { // 60 is navbar height offset
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('is-active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('is-active');
+                }
+            });
+        };
+        window.addEventListener('scroll', activateNavLink);
+        activateNavLink(); // Initial check on page load
+
+        // --- Shepherd Tour ---
+        const tour = new Shepherd.Tour({
+            useModalOverlay: true,
+            defaultStepOptions: {
+                classes: 'shadow-md bg-purple-800',
+                scrollTo: true,
+                 cancelIcon: { enabled: true },
+            }
+        });
+        tour.addStep({ id: 'welcome', text: 'Welcome to my portfolio! Let me give you a quick tour.', attachTo: { element: '#hero-section .title', on: 'bottom' }, buttons: [{ text: 'Next', action: tour.next }]});
+        tour.addStep({ id: 'experience', text: 'Explore my work history in this interactive timeline.', attachTo: { element: '#experience .timeline-container:first-child', on: 'bottom' }, buttons: [{ text: 'Back', action: tour.back }, { text: 'Next', action: tour.next }]});
+        tour.addStep({ id: 'projects', text: 'Check out some of my projects and publications.', attachTo: { element: '#projects', on: 'top' }, buttons: [{ text: 'Back', action: tour.back }, { text: 'Next', action: tour.next }]});
+        tour.addStep({ id: 'contact', text: 'Feel free to reach out! Thanks for visiting.', attachTo: { element: '#contact', on: 'top' }, buttons: [{ text: 'Back', action: tour.back }, { text: 'Finish', action: tour.complete }]});
+        document.getElementById('tour-button').addEventListener('click', () => tour.start());
+
+        // --- Three.js Hero Background ---
+        let scene, camera, renderer, sphere;
+        const container = document.getElementById('hero-canvas');
+
+        function initThree() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.SphereGeometry(2, 32, 32);
+            const material = new THREE.MeshBasicMaterial({ color: 0x3498db, wireframe: true });
+            sphere = new THREE.Mesh(geometry, material);
+            scene.add(sphere);
+
+            camera.position.z = 5;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            sphere.rotation.x += 0.001;
+            sphere.rotation.y += 0.001;
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        window.addEventListener('resize', onWindowResize, false);
+        initThree();
+        animate();
+
+    });
+    </script>
+</body>
+</html>
+
